@@ -1,0 +1,313 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+*:not(.content){
+	overflow: hidden;
+}
+
+.slide {
+	width: 100vw;
+	height: 100vh;
+	background-size: cover;
+	display: none;
+	position: fixed;
+}
+
+.bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-size: cover;
+	opacity: 1;
+}
+
+.active {
+	display: block;
+}
+
+.left-col,
+.rigth-col {
+	width: 100%;
+}
+
+.left-col {
+	text-align: right;
+}
+
+/* .slide-1 .layout,
+.slide-2 .layout {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	gap: 30px;
+} */
+
+.slide-1 {
+	background-image: url(image/slide-1-bg.jpg);
+}
+
+.title {
+	/* float: right; */
+	position: relative;
+	right: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.title img {
+	margin: 20px;
+	width: 25vw;
+}
+
+.slide-2 {
+	background-image: url(image/slide-2-bg.jpg);
+	/* position: relative; */
+}
+
+.slide-header {
+	position: relative;
+	right: 0;
+	top: 0;
+	width: 100vw;
+	height: 0vh;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.slide-header img {
+	margin: 20px;
+	width: 10vw;
+	float: right;
+}
+
+.about-me {
+	position: absolute;
+	bottom: 0;
+	left: 10vw;
+	/* height: 80vh; */
+	width: 30vw;
+	background: rgba(58, 128, 169, 0.2);
+	padding: 20px;
+	display: inline-block;
+	shape-outside: polygon(20% 0, 100% 0, 80% 100%, 0% 100%);
+	shape-margin: 20px;
+	-webkit-clip-path: polygon(20% 0, 100% 0, 80% 100%, 0% 100%);
+	clip-path: polygon(30% 0%, 100% 0%, 75% 100%, 0% 100%);
+	animation: rise 0.5s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes rise {
+	from {
+		height: 0vh;
+	}
+
+	to {
+		height: 80vh;
+	}
+}
+
+.shaped {
+	background: black url(image/my-photo.jpg) center left no-repeat;
+	height: 60vh;
+	width: 100%;
+	float: right;
+	background-size: cover;
+	shape-outside: polygon(20% 0, 100% 0, 80% 100%, 0% 100%);
+	shape-margin: 20px;
+	-webkit-clip-path: polygon(20% 0, 100% 0, 80% 100%, 0% 100%);
+	opacity: 0;
+	clip-path: polygon(30% 0, 100% 0, 80% 100%, 5% 100%);
+	animation: opa 0.5s;
+	animation-delay: 0.5s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes opa {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+.about-me h1 {
+	text-align: right;
+	width: 80%;
+	padding: 20px;
+	color: #fcfcfc;
+	font-size: 50px;
+}
+
+.handshake {
+	position: absolute;
+	right: 10vw;
+	bottom: 10vh;
+	width: 25vw;
+}
+
+.svg-handshake {
+	stroke-dasharray: 6000;
+	animation: dash 5s ease-in-out;
+}
+
+@keyframes dash {
+	from {
+		stroke-dashoffset: 6000;
+	}
+
+	to {
+		stroke-dashoffset: 0;
+	}
+}
+
+.slide-3 {
+	background: url(image/slide-3-bg.jpg);
+}
+
+.slide-3 .bg {
+	background: url(image/slide-2-bg.jpg);
+	animation: opa-3 0.5s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes opa-3 {
+	from {
+		opacity: 1;
+	}
+
+	to {
+		opacity: 0;
+	}
+}
+
+.slide-content {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+}
+
+.slide-content img {
+	position: absolute;
+	width: 100vw;
+}
+
+.hello {
+	animation-delay: 0.2s;
+	animation: slide 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+}
+
+.hello-text {
+	animation-delay: 1s;
+	animation: opa 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+}
+
+@keyframes slide {
+	from {
+		left: 100vw;
+	}
+
+	to {
+		left: 0vw;
+	}
+}
+
+.slide-4 {
+	background: url(image/slide-4-bg.jpg);
+	/* animation: opa-3 0.5s; */
+	/* animation-fill-mode: forwards; */
+}
+
+.slide-4 .bg {
+	background: url(image/slide-3-bg.jpg);
+	animation: opa-3 0.5s;
+	animation-fill-mode: forwards;
+}
+
+.opa {
+	animation: opa 0.5s;
+}
+
+.qu-1,
+.qu-2 {
+	animation: blink 1s infinite;
+}
+
+.qu-1 {
+	animation-delay: 0.5s;
+}
+
+@keyframes blink {
+	0% {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0;
+
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.slide-5 {
+	background: url(image/slide-1-bg.jpg);
+}
+
+.slide-5 .bg {
+	background: url(image/slide-4-bg.jpg);
+	animation: opa-3 0.5s;
+	animation-fill-mode: forwards;
+}
+
+.slide-to-rigth {
+	animation: slide-to-right 1s ease-in-out;
+}
+
+@keyframes slide-to-right {
+	from {
+		left: -50vw;
+	} to {
+		left: 0vw;
+	}
+}
+
+.slide-6 {
+	background: url(image/slide-4-bg.jpg);
+}
+
+.slide-6 .bg {
+	background: url(image/slide-3-bg.jpg);
+	animation: opa-3 0.5s;
+	animation-fill-mode: forwards;
+}
+
+.slide-7 {
+	background: url(image/slide-5-bg.jpg);
+}
+
+.slide-7 .bg {
+	background: url(image/slide-4-bg.jpg);
+	animation: opa-3 0.5s;
+	animation-fill-mode: forwards;
+}
+
+.slide-content img {
+	width: 100vw;
+}
